@@ -8,8 +8,9 @@
     @vite('resources/css/app.css')
 </head>
 <body>
+    
    <div class="bg-brand w-full min-h-screen">
-         
+         <livewire:navbar/>
    </div>
 </body>
 </html>
