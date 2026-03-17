@@ -27,6 +27,6 @@ new class extends Component
 
 <div class="w-full flex justify-between p-5 ">
     <h1 class="text-gray-300 text-3xl font-bold">Hi there, {{ $myName }} {{ $greeting }} </h1>
-    <input type="text" >
+    <input type="text" class="border h=3 border-gray-200 text-gray-300 py-1.5 rounded-md focus:outline-0">
     {{-- Always remember that you are absolutely unique. Just like everyone else. - Margaret Mead --}}
 </div>
