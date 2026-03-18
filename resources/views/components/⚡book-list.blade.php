@@ -6,12 +6,32 @@ new class extends Component
 {
     //
     public $books;
-    public $isModalOpen=true;
-    public $bookID=null;
+    public $isModalOpen=false;
+    public $bookId=null;
    public function mount(){
     $this->books = Book::all();
    }
+
+    
+
+   public function deleteBook($id){
+    $this->bookId= $id;
+    $this->isModelOpen=true;
+
+   }
+
+function cancel(){
+    $this->bookId=null;
+    $this->isModalOpen=false;
+   }
+   public function deleteBtn(){
+    Book::findOrFail($this->bookId);
+    $book->delete();
+    $this->books=Book::all();
+    $this->isModalOpen = false;
+   }
 };
+
 ?>
 
 <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-3 my-4 ">
@@ -24,7 +44,7 @@ new class extends Component
             <h1>Author:{{$book->author}}</h1>
             <div class="flex justify-between items-center">
             <span>Rating:{{$book->rating}}</span>
-            <button class="bg-red-700 text-gray-200 rounded-md py-2 px-4 ">Delete</button>
+            <button wire:click="deleteBook({{ $book->id }})" class="bg-red-700 text-gray-200 rounded-md py-2 px-4 ">Delete</button>
             </div>
          </div>
      @endforeach
@@ -35,8 +55,8 @@ new class extends Component
         <h1 class="font-bold ">Are you sure you want to delete this book?</h1>
     </div>
     <div class="flex my-4 justify-between p-2 items-center">
-       <button class="bg-white px-3 py-2   rounded-md">Cancel</button>
-       <button class="bg-red-700 px-3 py-2 rounded-md">Delete</button>
+       <button wire:click="cancel" class="bg-white px-3 py-2   rounded-md">Cancel</button>
+       <button wire:click="deleteBtn" class="bg-red-700 px-3 py-2 rounded-md">Delete</button>
     </div>
 </div>         
      @endif
