@@ -6,7 +6,8 @@ new class extends Component
 {
     //
     public $books;
-
+    public $isModalOpen=true;
+    public $bookID=null;
    public function mount(){
     $this->books = Book::all();
    }
@@ -27,5 +28,17 @@ new class extends Component
             </div>
          </div>
      @endforeach
+     @if ($isModalOpen)
+    <div class="absolute top-1/2 left-1/2 bg-black/75 -translate-1/2 rounded-md">
+    <div class="fles flex-col text-white p-5 rounded-md ">
+        <span class="font-bold ">Delete a book</span>
+        <h1 class="font-bold ">Are you sure you want to delete this book?</h1>
+    </div>
+    <div class="flex my-4 justify-between p-2 items-center">
+       <button class="bg-white px-3 py-2   rounded-md">Cancel</button>
+       <button class="bg-red-700 px-3 py-2 rounded-md">Delete</button>
+    </div>
+</div>         
+     @endif
     {{-- No surplus words or unnecessary actions. - Marcus Aurelius --}}
 </div>
