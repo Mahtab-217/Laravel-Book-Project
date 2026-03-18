@@ -12,7 +12,7 @@ class BookFactory extends Factory
 {
     /**
      * Define the model's default state.
-     *
+     *z
      * @return array<string, mixed>
      */
     public function definition(): array
@@ -20,7 +20,7 @@ class BookFactory extends Factory
         return [
             //
             "title"=>fake()->sentence(3),
-            "rating"=>fake()->numberBetween(10),
+            "rating"=>fake()->numberBetween(1,10),
             "author"=>fake()->name()
         ];
     }

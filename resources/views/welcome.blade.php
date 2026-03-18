@@ -11,6 +11,7 @@
     
    <div class="bg-brand w-full min-h-screen">
          <livewire:navbar/>
+         <livewire:book-list/>
    </div>
 </body>
 </html>
