@@ -8,6 +8,16 @@ new class extends Component
     public getBookProperty(){
         return Book::all();
     }
+    public function getTitle($title){
+         $this->title=$title,
+
+    }
+    public function getAuthor($author){
+         $this->author=$author
+    }
+    public function getRating($rating){
+           $this->rating=$rating;
+    }
 
 };
 ?>

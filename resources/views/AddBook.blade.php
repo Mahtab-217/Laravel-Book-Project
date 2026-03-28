@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="h-screen w-full flex flex-col justify-center">
-        
+        <wire:insert-form/>
     </div>
 </body>
 </html>
