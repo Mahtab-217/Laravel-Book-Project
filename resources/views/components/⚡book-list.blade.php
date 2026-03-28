@@ -43,7 +43,7 @@ function cancel(){
             <h1 class="text-gray-200">{{$book->title}}</h1>
             <h1>Author:{{$book->author}}</h1>
             <div class="flex justify-between items-center">
-            <span>Rating:{{$book->rating}}</span>
+            <span class="bg-blue-600 py-2 px-4 text-gray-200 rounded-md">Rating:{{$book->rating}}</span>
             <button wire:click="deleteBook( {{ $book->id }})" class="bg-red-700 text-gray-200 rounded-md py-2 px-4 ">Delete</button>
             </div>
          </div>
